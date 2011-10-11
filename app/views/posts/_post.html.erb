@@ -1,0 +1,12 @@
+<%= div_for post, :style => "margin-top: 20px" do %>
+  <div>
+    <img src="http://www.gravatar.com/avatar.php?size=60&gravatar_id=7878a15a68101e32cf242f6f5ffdd6c5&default=avatar" style="float: left; margin-right: 15px" />
+    <h2 style="margin-bottom: 0px; line-height: 30px"><%= link_to_unless_current post.title, post, :style => 'color: #404040' %></h2>
+    <span style="color: #BFBFBF">Posted by Smartinez 1 day ago</span>
+  </div>
+  <div class="row" style="margin-top: 20px">
+    <div class="span16">
+      <%= simple_format post.body %>
+    </div>
+  </div>
+<% end -%>

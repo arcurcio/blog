@@ -1,0 +1,12 @@
+<%= div_for comment, :style => "margin-top: 20px" do %>
+  <div>
+    <img src="http://www.gravatar.com/avatar.php?size=60&gravatar_id=7878a15a68101e32cf242f6f5ffdd6c5&default=avatar" style="float: left; margin-right: 15px" />
+    <span style="color: #BFBFBF">Commented by Smartinez 2 day ago</span><br />
+    <span><%= link_to 'Destroy', [@post, comment], :confirm => 'Are you sure?', :method => :delete %></span>
+  </div>
+  <div class="row" style="margin-top: 20px">
+    <div class="span16">
+      <%= simple_format comment.body %>
+    </div>
+  </div>
+<% end -%>
