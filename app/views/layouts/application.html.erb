@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color: rgb(244, 244, 244)">
 <head>
   <title>WyeWorks Blog</title>
   <%= stylesheet_link_tag "http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" %>
@@ -11,25 +11,26 @@
   <div class="topbar">
     <div class="fill">
       <div class="container">
-        <h1><%= link_to "WyeWorks Blog", posts_path, :class => "brand" %></h1>
+        <h1 style="text-indent:-999px"><%= link_to "WyeWorks Blog", posts_path, :class => "brand", :style => "background: url(/assets/logo.png) no-repeat 20px 6px; width: 174px;"%></h1>
       </div>
     </div>
   </div>
 
-  <div class="container" style="background-color: white; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; padding-left: 30px; padding-right: 30px">
-    <div class="content" style="margin-top: 15px">
-      <% if alert -%>
-        <div class="alert-message error">
-          <a class="close" href="#">x</a>
-          <p><strong>Oh snap!</strong> <%= alert %></p>
-        </div>
-      <% end -%>
-      <% if notice -%>
-        <div class="alert-message success">
-          <a class="close" href="#">x</a>
-          <p><strong>Well done!</strong> <%= notice %></p>
-        </div>
-      <% end -%>
+  <div class="container">
+    <% if alert -%>
+      <div class="alert-message error" style="margin-top: 15px;">
+        <a class="close" href="#">x</a>
+        <p><strong>Oh snap!</strong> <%= alert %></p>
+      </div>
+    <% end -%>
+    <% if notice -%>
+      <div class="alert-message success" style="margin-top: 15px;">
+        <a class="close" href="#">x</a>
+        <p><strong>Well done!</strong> <%= notice %></p>
+      </div>
+    <% end -%>
+
+    <div class="content" style="background-color: white; border: 1px solid #ccc; margin-top: 20px; margin-bottom: 20px; padding-top: 20px; padding-left: 20px; padding-right: 20px; padding-bottom:10px;">
       <%= yield %>
     </div>
   </div>

@@ -13,15 +13,12 @@
 
   <%= form_for([@post, @comment]) do |f| %>
     <fieldset>
-      <legend style="padding-left: 0px">New comment</legend>
       <div class="clearfix">
         <div class="input" style="margin-left: 0px">
           <%= f.text_area :body, :rows => 5, :class => "xxlarge" %>
         </div>
       </div>
-      <div class="actions" style="padding-left: 20px">
-        <%= f.submit :class => "btn primary" %>
-      </div>
+      <%= f.submit :class => "btn primary" %>
     </fieldset>
   <% end %>
 </section>
