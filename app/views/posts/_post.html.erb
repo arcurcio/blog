@@ -1,10 +1,10 @@
-<%= div_for post, :style => "margin-bottom: 20px; #{'border-bottom: 1px dotted #ccc' if defined?(post_counter) && post_counter + 1 < @posts.size }" do %>
+<%= div_for post do %>
   <div>
-    <img src="http://www.gravatar.com/avatar.php?size=60&gravatar_id=7878a15a68101e32cf242f6f5ffdd6c5&default=avatar" style="float: left; margin-right: 15px; border: 1px solid #ccc;" />
-    <h2 style="margin-bottom: 0px; line-height: 30px"><%= link_to_unless_current post.title, post, :style => 'color: #404040' %></h2>
-    <span style="color: #BFBFBF">Posted by Smartinez 1 day ago</span>
+    <img src="http://www.gravatar.com/avatar.php?size=60&gravatar_id=7878a15a68101e32cf242f6f5ffdd6c5&default=avatar" />
+    <h2><%= link_to_unless_current post.title, post %></h2>
+    <span>Posted by Smartinez 1 day ago</span>
   </div>
-  <div style="margin-top: 20px">
+  <div class="post-body">
     <%= simple_format post.body %>
   </div>
 <% end -%>

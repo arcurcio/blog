@@ -5,28 +5,27 @@
       <p><strong>Oh snap! </strong><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</p>
       <ul>
         <% @post.errors.full_messages.each do |msg| %>
-          <li style="color: rgba(0, 0, 0, 0.8);"><%= msg %></li>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <%= form_for(@post) do |f| %>
+  <%= form_for([:admin, @post]) do |f| %>
     <fieldset>
-      <legend style="padding-left: 70px"><%= @post.persisted? ? "Edit article" : "New article" %></legend>
       <div class="clearfix">
-        <%= f.label :title, :style => "width: 50px" %>
-        <div class="input" style="margin-left: 70px">
+        <%= f.label :title %>
+        <div class="input">
           <%= f.text_field :title, :class => "xxlarge" %>
         </div>
       </div>
       <div class="clearfix">
-        <%= f.label :body, :style => "width: 50px" %>
-        <div class="input" style="margin-left: 70px">
+        <%= f.label :body %>
+        <div class="input">
           <%= f.text_area :body, :class => "xxlarge" %>
         </div>
       </div>
-      <div style="margin-left: 70px">
+      <div class="input">
         <%= f.submit :class => "btn primary" %>
       </div>
     </fieldset>

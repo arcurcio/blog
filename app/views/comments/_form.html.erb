@@ -1,24 +1,22 @@
-<section id="comment" style="margin-top: 20px">
+<div class="new-comment">
   <% if @comment.errors.any? %>
     <div class="alert-message block-message error">
       <a class="close" href="#">×</a>
       <p><strong>Oh snap! </strong><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</p>
       <ul>
         <% @comment.errors.full_messages.each do |msg| %>
-          <li style="color: rgba(0, 0, 0, 0.8);"><%= msg %></li>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <%= form_for([@post, @comment]) do |f| %>
+  <%= form_for([@post, @comment], :remote => true) do |f| %>
     <fieldset>
       <div class="clearfix">
-        <div class="input" style="margin-left: 0px">
-          <%= f.text_area :body, :rows => 5, :class => "xxlarge" %>
-        </div>
+        <%= f.text_area :body, :rows => 5, :class => "xxlarge" %>
       </div>
       <%= f.submit :class => "btn primary" %>
     </fieldset>
   <% end %>
-</section>
+</div>

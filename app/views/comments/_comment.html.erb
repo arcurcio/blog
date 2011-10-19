@@ -1,7 +1,7 @@
-<%= div_for comment, :style => "margin-top: 10px; border: 1px solid #ccc; background-color: #eee; padding: 10px; -moz-border-radius: 5px; -webkit-border-radius: 5px; min-height: 50px;" do %>
+<%= div_for comment do %>
   <div>
-    <img src="http://www.gravatar.com/avatar.php?size=50&gravatar_id=7878a15a68101e32cf242f6f5ffdd6c5&default=avatar" style="float: left; margin-right: 15px; margin-bottom: 15px; border: 1px solid #ccc;" />
-    <span style="color: #BFBFBF">Commented by Smartinez 2 day ago</span><br />
+    <img src="http://www.gravatar.com/avatar.php?size=50&gravatar_id=7878a15a68101e32cf242f6f5ffdd6c5&default=avatar" />
+    <span>Commented by Smartinez 2 day ago</span><br />
     <%= simple_format comment.body %>
   </div>
 <% end -%>
