@@ -2414,6 +2414,14 @@ div.new-comment {
   margin-top: 20px;
 }
 
+.new_comment .input {
+  margin-left: 55px;
+}
+
+.new_comment label {
+  width: 35px;
+}
+
 div.comment {
   margin-top: 10px;
   border: 1px solid #ccc;
