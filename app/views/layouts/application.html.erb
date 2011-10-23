@@ -4,7 +4,7 @@
   <title>WyeWorks Blog</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
-  <%= auto_discovery_link_tag :atom, posts_path(:format => :atom) %>
+  <%= auto_discovery_link_tag :atom, posts_path(format: :atom) %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,7 +17,7 @@
             <li class="menu">
             <a href="#" class="menu"><%= current_admin.email %></a>
             <ul class="menu-dropdown hidden">
-              <li><%= link_to 'Logout', destroy_admin_session_path, :method => :delete %></li>
+              <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete %></li>
             </ul>
             </li>
           </ul>

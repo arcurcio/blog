@@ -1,19 +1,19 @@
 Blog::Application.routes.draw do
-  devise_for :admin, :path_names => { :sign_in => 'login' } do
+  devise_for :admin, path_names: { sign_in: 'login' } do
     # get 'admin/forgot_password' => 'devise/passwords#new', :as => :new_user_password
   end
 
-  resources :posts, :only => [:index, :show] do
-    resources :comments, :only => [:create, :destroy]
+  resources :posts, only: [:index, :show] do
+    resources :comments, only: [:create, :destroy]
   end
 
   namespace :admin do
-    resources :posts, :except => :show
+    resources :posts, except: :show
 
-    root :to => "posts#index"
+    root to: 'posts#index'
   end
 
-  root :to => "posts#index"
+  root to: 'posts#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
