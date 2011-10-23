@@ -1,6 +1,6 @@
 <%= div_for comment do %>
   <div>
-    <img src="http://www.gravatar.com/avatar.php?size=50&gravatar_id=7878a15a68101e32cf242f6f5ffdd6c5&default=avatar" />
+    <%= gravatar_image_tag comment.email,  gravatar: { size: 50 } %>
     <span>Commented by <%= comment.email %> <%= time_ago_in_words comment.created_at %> ago</span><br />
     <%= simple_format comment.body %>
   </div>

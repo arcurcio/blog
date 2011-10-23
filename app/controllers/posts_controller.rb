@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id], :include => :comments, order: 'comments.id')
+    @post = Post.find(params[:id], include: :comments, order: 'comments.id')
     @comment = Comment.new
 
     respond_to do |format|
