@@ -34,10 +34,11 @@ class Admin::PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.admin = current_admin
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to admin_post_url(@post), notice: 'Post was successfully created.' }
+        format.html { redirect_to admin_posts_url, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
         format.xml  { render xml:  @post, status: :created, location: @post }
       else
@@ -55,7 +56,7 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to admin_post_url(@post), notice: 'Post was successfully updated.' }
+        format.html { redirect_to admin_posts_url, notice: 'Post was successfully updated.' }
         format.json { head :ok }
         format.xml  { head :ok }
       else
