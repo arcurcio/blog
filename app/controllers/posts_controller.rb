@@ -1,12 +1,16 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
+  # GET /posts.xml
+  # GET /posts.atom
   def index
     @posts = Post.order("id DESC")
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
+      format.xml  { render xml: @posts }
+      format.atom
     end
   end
 
