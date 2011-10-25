@@ -1,0 +1,108 @@
+/* bootstrap.css overrides */
+
+$grey: rgb(244, 244, 244);
+
+html, body {
+  background-color: $grey;
+}
+body {
+  padding-top: 40px;
+}
+.content {
+  background-color: white;
+  border: 1px solid #ccc;
+  margin: 20px auto;
+  padding: 20px 20px 10px;
+}
+fieldset legend {
+  padding-left: 155px;
+}
+label {
+  width: 135px;
+}
+form .input {
+  margin-left: 155px;
+}
+input[type=checkbox], input[type=radio] {
+  height: 24px;
+}
+.popover .content {
+  background-color: $grey;
+}
+
+/* User specifics */
+
+div.alert-message {
+  margin-top: 15px;
+  &.error li {
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+div.post {
+  margin-bottom: 30px;
+  border-bottom: 1px dotted #ccc;
+  &:last-child {
+    border-bottom: 0;
+  }
+  img {
+    float: left;
+    margin-right: 15px;
+    border: 1px solid #ccc;
+  }
+  h2 {
+    margin-bottom: 0px;
+    line-height: 30px;
+    a {
+      color: #404040;
+    }
+  }
+  span {
+    color: #bfbfbf
+  }
+  .post-body {
+    margin-top: 20px;
+  }
+}
+
+div.new-comment {
+  margin-top: 20px;
+  .input {
+    margin-left: 55px;
+  }
+  label {
+    width: 35px;
+  }
+}
+
+div.comment {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  padding: 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  min-height: 50px;
+  img {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+  }
+  span {
+    color: #bfbfbf;
+  }
+}
+
+h1.logo {
+  text-indent: -999px;
+  margin-bottom: 0px;
+  a {
+    background: url(/assets/logo.png) no-repeat 20px 6px;
+    width: 174px;
+  }
+}
+
+.hidden {
+  display: none;
+}
