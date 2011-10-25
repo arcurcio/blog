@@ -9,11 +9,17 @@ Blog::Application.routes.draw do
 
   namespace :admin do
     resources :posts, except: :show
-
-    root to: 'posts#index'
   end
 
   root to: 'posts#index'
+
+  authenticated do
+    match "/admin" => redirect("/admin/posts", :status => 302)
+  end
+
+  unauthenticated do
+    match "/admin" => redirect("/admin/login", :status => 302)
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
