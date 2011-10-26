@@ -1,0 +1,8 @@
+<% if @posts.empty? -%>
+  <div class="alert-message block-message info">
+    <a class="close" href="#">×</a>
+    <p><strong>There are no posts to display!</strong></p>
+  </div>
+<% else -%>
+  <%= render @posts %>
+<% end -%>

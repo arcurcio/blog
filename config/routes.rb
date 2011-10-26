@@ -1,11 +1,15 @@
 Blog::Application.routes.draw do
   devise_for :users
 
+  resources :posts, :only => [:index, :show]
+
   namespace :admin do
     resources :posts
+
+    root :to => "posts#index"
   end
 
-  root :to => "admin/posts#index"
+  root :to => "posts#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
