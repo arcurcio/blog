@@ -1,0 +1,7 @@
+<%= div_for comment do %>
+  <div>
+    <%= gravatar_image_tag comment.email,  gravatar: { size: 50 } %>
+    <span>Commented by <%= comment.email %> <%= time_ago_in_words comment.created_at %> ago</span><br />
+    <%= simple_format comment.body %>
+  </div>
+<% end %>

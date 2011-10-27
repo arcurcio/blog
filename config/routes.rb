@@ -1,7 +1,9 @@
 Blog::Application.routes.draw do
   devise_for :users
 
-  resources :posts, :only => [:index, :show]
+  resources :posts, :only => [:index, :show] do
+    resources :comments
+  end
 
   namespace :admin do
     resources :posts

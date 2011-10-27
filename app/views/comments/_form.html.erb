@@ -1,0 +1,33 @@
+<div class="new-comment">
+  <% if @comment.errors.any? %>
+    <div class="alert-message block-message error">
+      <a class="close" href="#">×</a>
+      <p><strong>Oh snap! </strong><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</p>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for([@post, @comment]) do |f| %>
+    <fieldset>
+      <div class="clearfix">
+        <%= f.label :email %>
+        <div class="input">
+          <%= f.email_field :email, class: 'xxlarge' %>
+        </div>
+      </div>
+      <div class="clearfix">
+        <%= f.label :body %>
+        <div class="input">
+          <%= f.text_area :body, rows: 5, class: 'xxlarge' %>
+        </div>
+      </div>
+      <div class="input">
+        <%= f.submit class: 'btn primary' %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

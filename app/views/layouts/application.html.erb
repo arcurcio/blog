@@ -11,7 +11,7 @@
     <nav class="fill">
       <div class="container">
         <h1 class="logo"><%= link_to "WyeWorks Blog", root_path, class: "brand" %></h1>
-        <% if user_signed_in? -%>
+        <% if user_signed_in? %>
           <ul class="nav secondary-nav">
             <li class="menu">
             <a href="#" class="menu"><%= current_user.email %></a>
@@ -20,24 +20,24 @@
             </ul>
             </li>
           </ul>
-        <% end -%>
+        <% end %>
       </div>
     </nav>
   </header>
 
   <div class="container">
-    <% if alert -%>
+    <% if alert %>
       <div class="alert-message error" data-alert="alert">
         <a class="close" href="#">x</a>
         <p><strong>Oh snap!</strong> <%= alert %></p>
       </div>
-    <% end -%>
-    <% if notice -%>
+    <% end %>
+    <% if notice %>
       <div class="alert-message success" data-alert="alert">
         <a class="close" href="#">x</a>
         <p><strong>Well done!</strong> <%= notice %></p>
       </div>
-    <% end -%>
+    <% end %>
 
     <section class="content">
       <%= yield %>
