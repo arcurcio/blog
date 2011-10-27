@@ -9,9 +9,11 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to @post, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
+        format.js   { render @comment, content_type: Mime::HTML }
       else
         format.html { render "posts/show" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.js   { render partial: "form", status: :unprocessable_entity }
       end
     end
   end
