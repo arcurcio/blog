@@ -1,6 +1,8 @@
 <%= div_for post do %>
   <div>
+    <%= gravatar_image_tag post.user.email,  gravatar: { size: 50 } %>
     <h2><%= link_to_unless_current post.title, post %></h2>
+    <span>Posted by <%= post.user.email %> <%= time_ago_in_words post.created_at %> ago</span><br />
   </div>
   <div class="post-body">
     <%= simple_format post.body %>
